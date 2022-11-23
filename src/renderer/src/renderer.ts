@@ -75,8 +75,24 @@ const CreateItemMenu = (item: iMainMenu): void => {
   button.append(textBtn)
 
   li.append(button)
-
+  li.addEventListener('click', () => ClickItemMenu(li))
   containerMenu?.appendChild(li)
+}
+
+const removeActive = (ElContainer: HTMLCollection, ClassRemove: string): void => {
+  for (const El of ElContainer) {
+    El.classList.remove(ClassRemove)
+  }
+}
+
+const ClickItemMenu = (ItemEl: HTMLElement): void => {
+  console.log(ItemEl)
+  const btn = ItemEl.querySelector('.btnMenu')
+  const containerItems = document.getElementsByClassName('containerMenu')
+  removeActive(containerItems, 'active')
+  ItemEl.onclick = (): void => {
+    btn?.classList.add('active')
+  }
 }
 
 init()
