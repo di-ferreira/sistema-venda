@@ -1,22 +1,7 @@
 export function init(): void {
   window.addEventListener('DOMContentLoaded', () => {
-    doAThing()
+    LoadMainMenu()
   })
-}
-
-function doAThing(): void {
-  const versions = window.electron.process.versions
-  replaceText('.electron-version', `Electron v${versions.electron}`)
-  replaceText('.chrome-version', `Chromium v${versions.chrome}`)
-  replaceText('.node-version', `Node v${versions.node}`)
-  replaceText('.v8-version', `V8 v${versions.v8}`)
-}
-
-function replaceText(selector: string, text: string): void {
-  const element = document.querySelector<HTMLElement>(selector)
-  if (element) {
-    element.innerText = text
-  }
 }
 
 const containerMenu = document.querySelector('.containerMenu')
@@ -72,18 +57,23 @@ const CreateItemMenu = (item: iMainMenu): void => {
   const li = document.createElement('li')
   const button = document.createElement('button')
   const icon = document.createElement('i')
+  const textBtn = document.createTextNode(item.label)
+  const listClassIcon = item.icon.split(' ')
 
   li.classList.add('itemMenu')
   button.classList.add('btnMenu')
 
+  listClassIcon.forEach((c) => {
+    icon.classList.add(c)
+  })
+
+  button.append(icon)
+
   if (item.active) {
     button.classList.add('active')
   }
-  button.append(item.label)
+  button.append(textBtn)
 
-  icon.classList.add(item.icon)
-
-  li.append(icon)
   li.append(button)
 
   containerMenu?.appendChild(li)
