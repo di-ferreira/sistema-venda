@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistema de Vendas</title>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+  <link href="./assets/styles.css" type="text/css" rel="stylesheet" />
+  <link href="./assets/css/fontAwesome/css/all.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <nav class="MainMenu">
+      <h2>
+        <i class="fa-solid fa-dollar-sign"></i>
+        sistema de vendas
+      </h2>
+      <ul class="containerMenu">
+        <li class="itemMenu">
+          <button class="btnMenu active" onclick="location.href='#'">
+            <i class="fa-solid fa-house-chimney"></i>
+            home
+          </button>
+        </li>
+        <li class="itemMenu">
+          <button class="btnMenu" onclick="location.href='#'">
+            <i class="fa-solid fa-boxes-packing"></i>
+            produtos
+          </button>
+        </li>
+        <li class="itemMenu">
+          <button class="btnMenu" onclick="location.href='#'">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            vendas
+          </button>
+        </li>
+        <li class="itemMenu">
+          <button class="btnMenu" onclick="location.href='#'">
+            <i class="fa-solid fa-file-lines"></i>
+            relatórios
+          </button>
+        </li>
+        <li class="itemMenu">
+          <button class="btnMenu" onclick="location.href='#'">
+            <i class="fa-solid fa-robot"></i>
+            message bot
+          </button>
+        </li>
+        <li class="itemMenu">
+          <button class="btnMenu" onclick="location.href='#'">
+            <i class="fa-sharp fa-solid fa-gears"></i>
+            configurações
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <main id="MainContainer"></main>
+  </div>
+  <script type="module" src="./src/renderer.ts"></script>
+</body>
+
+</html>
