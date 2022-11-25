@@ -1,46 +1,47 @@
 import { iMainMenu } from '../../../@types/index'
+import SwitchRoute from '../routes'
 import { makeElement } from '../utils/index'
 const containerMenu = document.querySelector('.containerMenu')
 
 const mainMenu: iMainMenu[] = [
   {
     label: 'home',
-    link: (): void => {},
+    link: (): void => SwitchRoute('HOME'),
     active: true,
     icon: 'fa-solid fa-house-chimney',
     defaultColor: 'red'
   },
   {
     label: 'produtos',
-    link: (): void => {},
+    link: (): void => SwitchRoute('PRODUTOS'),
     active: false,
     icon: 'fa-solid fa-boxes-packing',
     defaultColor: 'orange'
   },
   {
     label: 'vendas',
-    link: (): void => {},
+    link: (): void => SwitchRoute('VENDAS'),
     active: false,
     icon: 'fa-solid fa-hand-holding-dollar',
     defaultColor: 'green'
   },
   {
     label: 'relatórios',
-    link: (): void => {},
+    link: (): void => SwitchRoute('RELATORIOS'),
     active: false,
     icon: 'fa-solid fa-file-lines',
     defaultColor: 'purple'
   },
   {
     label: 'message bot',
-    link: (): void => {},
+    link: (): void => SwitchRoute('BOT'),
     active: false,
     icon: 'fa-solid fa-robot',
     defaultColor: 'green'
   },
   {
     label: 'configurações',
-    link: (): void => {},
+    link: (): void => SwitchRoute('CONFIGURACOES'),
     active: false,
     icon: 'fa-sharp fa-solid fa-gears',
     defaultColor: 'red'
@@ -67,24 +68,10 @@ const CreateItemMenu = (item: iMainMenu): void => {
 
   li.addEventListener('click', (e) => {
     e.preventDefault
-    const Btns = document.getElementsByClassName('itemMenu')
-    removeActive(Btns, 'active')
-    ClickItemMenu(li)
+    item.link()
   })
 
   containerMenu?.appendChild(li)
-}
-
-const removeActive = (ElContainer: HTMLCollection, ClassRemove: string): void => {
-  for (const El of ElContainer) {
-    El.classList.remove(ClassRemove)
-  }
-}
-
-const ClickItemMenu = (ItemEl: HTMLElement): void => {
-  ItemEl.onclick = (): void => {
-    ItemEl.classList.add('active')
-  }
 }
 
 export default LoadMainMenu

@@ -3,7 +3,7 @@ import { makeElement } from '../utils'
 
 const MainContainer: HTMLElement | null = document.querySelector('#MainContainer')
 
-const CreateProductScreen = (): void => {
+const CreateRelScreen = (): void => {
   const CardContainer = makeElement(
     'section',
     ['CardContainer'],
@@ -14,4 +14,4 @@ const CreateProductScreen = (): void => {
   MainContainer?.appendChild(dashboard)
 }
 
-export default CreateProductScreen
+export default CreateRelScreen

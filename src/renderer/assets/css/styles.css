@@ -72,9 +72,10 @@ ul {
 }
 
 .MainMenu h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 10px;
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
@@ -82,10 +83,14 @@ ul {
   padding: 0 15px 30px;
 }
 
+.MainMenu h2 span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .MainMenu h2 i {
   color: var(--Red-HEX);
-  margin-right: -20px;
-  margin-left: 20px;
   font-size: 50px;
 }
 
