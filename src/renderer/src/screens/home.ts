@@ -10,10 +10,10 @@ const CreateHomeScreen = (): void => {
     'section',
     ['CardContainer'],
     [
-      Card('Produtos', 'Desc produtos'),
-      Card('Vendas', 'Desc Vendas'),
-      Card('Relatórios', 'Desc Relatórios'),
-      Card('Bot', 'Desc bot')
+      Card('Produtos', 'Desc produtos', 'orange', 'fa-solid fa-boxes-packing'),
+      Card('Vendas', 'Desc Vendas', 'blue', 'fa-solid fa-hand-holding-dollar'),
+      Card('Relatórios', 'Desc Relatórios', 'purple', 'fa-solid fa-file-lines'),
+      Card('Bot', 'Desc bot', 'green', 'fa-solid fa-robot')
     ]
   )
   const dashboard = makeElement('section', ['dashboard'], [chart, CardContainer])

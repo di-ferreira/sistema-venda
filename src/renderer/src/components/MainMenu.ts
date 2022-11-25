@@ -3,36 +3,47 @@ import { makeElement } from '../utils/index'
 const containerMenu = document.querySelector('.containerMenu')
 
 const mainMenu: iMainMenu[] = [
-  { label: 'home', link: "location.href='#'", active: true, icon: 'fa-solid fa-house-chimney' },
+  {
+    label: 'home',
+    link: "location.href='#'",
+    active: true,
+    icon: 'fa-solid fa-house-chimney',
+    defaultColor: 'red'
+  },
   {
     label: 'produtos',
     link: "location.href='#'",
     active: false,
-    icon: 'fa-solid fa-boxes-packing'
+    icon: 'fa-solid fa-boxes-packing',
+    defaultColor: 'orange'
   },
   {
     label: 'vendas',
     link: "location.href='#'",
     active: false,
-    icon: 'fa-solid fa-hand-holding-dollar'
+    icon: 'fa-solid fa-hand-holding-dollar',
+    defaultColor: 'green'
   },
   {
     label: 'relatórios',
     link: "location.href='#'",
     active: false,
-    icon: 'fa-solid fa-file-lines'
+    icon: 'fa-solid fa-file-lines',
+    defaultColor: 'purple'
   },
   {
     label: 'message bot',
     link: "location.href='#'",
     active: false,
-    icon: 'fa-solid fa-robot'
+    icon: 'fa-solid fa-robot',
+    defaultColor: 'green'
   },
   {
     label: 'configurações',
     link: "location.href='#'",
     active: false,
-    icon: 'fa-sharp fa-solid fa-gears'
+    icon: 'fa-sharp fa-solid fa-gears',
+    defaultColor: 'red'
   }
 ]
 
@@ -45,32 +56,20 @@ const LoadMainMenu = (): void => {
 const CreateItemMenu = (item: iMainMenu): void => {
   const icon = makeElement('i', item.icon.split(' '))
   const textBtn = document.createTextNode(item.label)
-  const button = makeElement('button', ['btnMenu'], [icon, textBtn])
-  const li = makeElement('li', ['itemMenu'], [button])
+  const li = makeElement('li', ['itemMenu'], [icon, textBtn])
+
+  li.setAttribute('data-color', item.defaultColor)
+  icon.setAttribute('data-color', item.defaultColor)
 
   if (item.active) {
-    button.classList.add('active')
+    li.classList.add('active')
   }
 
-  textBtn.addEventListener('click', (e) => {
+  li.addEventListener('click', (e) => {
     e.preventDefault
-    const Btns = document.getElementsByClassName('btnMenu')
+    const Btns = document.getElementsByClassName('itemMenu')
     removeActive(Btns, 'active')
-    ClickItemMenu(button)
-  })
-
-  icon.addEventListener('click', (e) => {
-    e.preventDefault
-    const Btns = document.getElementsByClassName('btnMenu')
-    removeActive(Btns, 'active')
-    ClickItemMenu(button)
-  })
-
-  button.addEventListener('click', (e) => {
-    e.preventDefault
-    const Btns = document.getElementsByClassName('btnMenu')
-    removeActive(Btns, 'active')
-    ClickItemMenu(button)
+    ClickItemMenu(li)
   })
 
   containerMenu?.appendChild(li)
