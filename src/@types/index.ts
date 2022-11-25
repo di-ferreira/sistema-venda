@@ -1,7 +1,7 @@
 export interface iMainMenu {
   label: string
   icon: string
-  link: string
+  link: VoidFunction
   defaultColor: string
   active: boolean
 }

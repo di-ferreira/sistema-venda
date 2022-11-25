@@ -38,6 +38,7 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'))
   }
+  console.log('ola')
 }
 
 // This method will be called when Electron has finished

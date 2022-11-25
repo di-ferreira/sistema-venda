@@ -5,42 +5,42 @@ const containerMenu = document.querySelector('.containerMenu')
 const mainMenu: iMainMenu[] = [
   {
     label: 'home',
-    link: "location.href='#'",
+    link: (): void => {},
     active: true,
     icon: 'fa-solid fa-house-chimney',
     defaultColor: 'red'
   },
   {
     label: 'produtos',
-    link: "location.href='#'",
+    link: (): void => {},
     active: false,
     icon: 'fa-solid fa-boxes-packing',
     defaultColor: 'orange'
   },
   {
     label: 'vendas',
-    link: "location.href='#'",
+    link: (): void => {},
     active: false,
     icon: 'fa-solid fa-hand-holding-dollar',
     defaultColor: 'green'
   },
   {
     label: 'relatórios',
-    link: "location.href='#'",
+    link: (): void => {},
     active: false,
     icon: 'fa-solid fa-file-lines',
     defaultColor: 'purple'
   },
   {
     label: 'message bot',
-    link: "location.href='#'",
+    link: (): void => {},
     active: false,
     icon: 'fa-solid fa-robot',
     defaultColor: 'green'
   },
   {
     label: 'configurações',
-    link: "location.href='#'",
+    link: (): void => {},
     active: false,
     icon: 'fa-sharp fa-solid fa-gears',
     defaultColor: 'red'

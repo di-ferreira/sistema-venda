@@ -23,6 +23,7 @@
   "dependencies": {
     "@electron-toolkit/preload": "^1.0.2",
     "@electron-toolkit/utils": "^1.0.2",
+    "@electron/remote": "^2.0.8",
     "apexcharts": "^3.36.3"
   },
   "devDependencies": {
