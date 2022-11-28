@@ -25,9 +25,8 @@
     "@electron-toolkit/utils": "^1.0.2",
     "@electron/remote": "^2.0.8",
     "apexcharts": "^3.36.3",
-    "reflect-metadata": "^0.1.13",
-    "sqlite3": "^5.1.2",
-    "typeorm": "^0.3.10"
+    "sequelize": "^6.25.8",
+    "sqlite3": "^5.1.2"
   },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
@@ -41,7 +40,10 @@
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
     "prettier": "^2.7.1",
+    "tedious": "^15.1.2",
     "typescript": "^4.9.3",
     "vite": "^3.2.4"
   }

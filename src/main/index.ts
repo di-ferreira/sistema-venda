@@ -1,6 +1,7 @@
 import { app, shell, BrowserWindow } from 'electron'
+import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import * as path from 'path'
-import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import { AppDataSource } from '../database/DataSource'
 
 function createWindow(): void {
   // Create the browser window.
@@ -22,7 +23,13 @@ function createWindow(): void {
     }
   })
 
-  mainWindow.on('ready-to-show', () => {
+  mainWindow.on('ready-to-show', async () => {
+    try {
+      await AppDataSource.authenticate()
+      console.log('Connection has been established successfully.')
+    } catch (error) {
+      console.error('Unable to connect to the database:', error)
+    }
     mainWindow.show()
   })
 
@@ -38,7 +45,6 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'))
   }
-  console.log('ola')
 }
 
 // This method will be called when Electron has finished

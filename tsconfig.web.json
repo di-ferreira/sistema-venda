@@ -7,12 +7,5 @@
     "src/@types/*.ts",
     "src/database/*",
     "src/database/**/*"
-  ],
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./",
-    "composite": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-  }
+  ]
 }
