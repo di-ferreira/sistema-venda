@@ -24,12 +24,15 @@
     "@electron-toolkit/preload": "^1.0.2",
     "@electron-toolkit/utils": "^1.0.2",
     "@electron/remote": "^2.0.8",
-    "apexcharts": "^3.36.3"
+    "apexcharts": "^3.36.3",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.2",
+    "typeorm": "^0.3.10"
   },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@electron/notarize": "^1.2.3",
-    "@types/node": "16.11.22",
+    "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "electron": "^21.3.0",

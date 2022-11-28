@@ -1,11 +1,18 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "include": [
-    "src/renderer/**/*.ts",
-    "src/preload/*.d.ts",
-    "src/@types/*.ts"
+    "electron.vite.config.*",
+    "src/main/*",
+    "src/preload/*",
+    "src/@types/*.ts",
+    "src/database/*",
+    "src/database/**/*"
   ],
   "compilerOptions": {
-    "composite": true
+    "outDir": "./dist",
+    "rootDir": "./",
+    "composite": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   }
 }
